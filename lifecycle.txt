@@ -1,0 +1,101 @@
+
+activity: onCreate
+activity: onStart
+activity: onResume
+
+fragment: init tab1
+fragment: onAttach tab1
+fragment: onCreate tab1
+fragment: onCreateView tab1
+fragment: onViewCreated tab1
+fragment: onViewCreated tab1 fetchAllPosts ---- API CALL
+fragment: onStart tab1
+fragment: onResume tab1
+
+----------------------------------------------------------
+
+now press home buton
+
+activity: onPause
+activity: onStop
+
+fragment: onPause tab1
+fragment: onStop tab1
+
+----------------------------------------------------------
+
+now open app from recent
+
+activity: onStart
+activity: onResume
+
+fragment: onStart tab1
+fragment: onResume tab1
+
+
+-----------------------------------------------------------------------
+
+chnage tab1 to tab2
+
+onPause tab1
+
+fragment: init tab2
+fragment: onAttach tab2
+fragment: onCreate tab2
+fragment: onCreateView tab2
+fragment: onViewCreated tab2
+fragment: onViewCreated tab2 fetchAllPosts ---- API CALL
+fragment: onStart tab2
+fragment: onResume tab2
+
+fragment: init tab3
+
+-----------------------------------------------------------------------
+
+chnage back tab2 to tab1
+
+fragment: onPause tab2
+
+fragment: onResume tab1
+
+-----------------------------------------------------------------------
+
+chnage tab1 to tab2
+
+fragment: onPause tab1
+
+fragment: onResume tab2
+
+-----------------------------------------------------------------------
+
+chnage back tab2 to tab1
+
+fragment: onPause tab2
+
+fragment: onResume tab1
+
+-----------------------------------------------------------------------
+
+open second activity from tab1
+
+fragment: onPause tab1
+activity: onPause
+activity2: onCreate
+activity2: onStart
+activity2: onResume
+fragment: onStop tab1
+fragment: onStop tab2
+activity: onStop
+
+-----------------------------------------------------------------------
+press back from second activity to main
+
+activity2: onPause
+activity: onRestart
+fragment: onStart tab1
+fragment: onStart tab2
+activity: onStart
+activity: onResume
+fragment: onResume tab1
+activity2: onStop
+activity2: onDestroy
