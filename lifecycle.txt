@@ -94,8 +94,121 @@ activity2: onPause
 activity: onRestart
 fragment: onStart tab1
 fragment: onStart tab2
+
 activity: onStart
 activity: onResume
 fragment: onResume tab1
 activity2: onStop
 activity2: onDestroy
+
+
+----------------------------------------------------------------------------------
+
+
+
+ id 'kotlin-kapt'
+    //id 'com.google.gms.google-services'
+    //id 'com.google.firebase.crashlytics'
+    id 'com.google.dagger.hilt.android
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes true
+}
+
+    // ViewModel
+    def lifecycle_version = "2.6.0"
+    def fragment_version = "1.5.5"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+
+    // Annotation processor
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    //pagging 3
+    def paging_version = "3.1.1"
+    implementation "androidx.paging:paging-runtime:$paging_version"
+
+    //Room
+    def room_version = "2.4.3"
+    implementation "androidx.room:room-runtime:$room_version"
+    // To use Kotlin annotation processing tool (kapt)
+    kapt "androidx.room:room-compiler:$room_version"
+
+    //Viewpager2
+    def viewpager_version = "1.0.0"
+    implementation "androidx.viewpager2:viewpager2:$viewpager_version"
+
+    //multidex
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    //DotsIndicator
+    def dots_indicator_version = "4.3"
+    implementation "com.tbuonomo:dotsindicator:$dots_indicator_version"
+
+    //Notification
+    def core_version = "1.6.0"
+    implementation "androidx.core:core:$core_version"
+
+    //glide
+    def glide_version = "4.15.1"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    //Retrofit
+    def retrofit_version = "2.9.0"
+    def logging_version = "4.3.1"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$logging_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_version"
+
+    //sdp ssp
+    def sdp_version = "1.1.0"
+    implementation "com.intuit.sdp:sdp-android:$sdp_version"
+    implementation "com.intuit.ssp:ssp-android:$sdp_version"
+
+    //Hilt
+    def hilt_version = "2.44"
+    def hilt_compiler_version = "1.0.0"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_compiler_version"
+
+buildscript {
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.0'
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
+    }
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.2.1' apply false
+    id 'com.android.library' version '7.2.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+    id 'com.google.dagger.hilt.android' version '2.44' apply false
+}
+
+buildscript {
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.0'
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
+    }
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.2.1' apply false
+    id 'com.android.library' version '7.2.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+    id 'com.google.dagger.hilt.android' version '2.44' apply false
+}
